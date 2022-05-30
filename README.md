@@ -1,4 +1,4 @@
-# XXX9999X - Team Project
+# COP4111C - Team Project
 
 ## Table of contents
 
