@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <style>
+        body{
+            background-color: lightblue;
+        }
+        .buttons{
+            margin: 0 auto;
+        }
+        li{
+            list-style: none;
+        }
+        li:nth-child(1)::before{
+            content: " ";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background:url("./rock.png") ;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        li:nth-child(2)::before{
+            content: " ";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background:url("./scissor.png") ;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        li:nth-child(3)::before{
+            content: " ";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background:url("./paper.png") ;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <header class="main-header d-flex justify-content-center">
+            <h1>
+                <span>Rock!</span>
+                <span>Paper!</span>
+                <span>Scissors!</span>
+            </h1>
+        </header>
+       <div class="d-flex justify-content-center">
+            <div class="row">
+                <label for="name"> Enter Your Name </label>
+                <div class="col-3">
+                    
+                    <input id="name" class="mb-2" type="text">
+                    <div class="buttons col-2 d-flex mb-2">
+                        <input id="new" class="btn btn-primary" type="button" value="New Game">
+                       
+                    </div>
+                    <div class="buttons col-2 d-flex mb-2">
+                        <input id ="resume" class="btn btn-primary" type="button" value="Resume Game">
+                    </div>
+                    <div class="buttons col-2 d-flex mb-2">
+                        <input id ="leaderboard" class="btn btn-primary" type="button" value="Leader Board">
+                    </div>
+                </div>
+                
+            </div>
+           
+       </div>
+        
+       <div class="row">
+        <div class="card">
+            <div class="card-header">
+              Rules
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Rules Of the Game</h5>
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              <p class="intro">The game is played where players deliver hand signals that will represent the elements of the game; rock, paper and scissors. 
+                The outcome of the game is determined by 3 simple rules: </p>
+               
+
+               <ul> <li>Rock wins against scissors.</li>
+                <li>Scissors win against paper.</li>
+                <li>Paper wins against rock.</li></ul>
+                <br>
+                <p>Click on the 'New Game' button to begin a new game and then object of your choosing (Rock, Paper or Scissors to start). </p>
+                <p>Click on the 'Resume Game' button to load a game/resume a game you were previously playing. </p>
+                <p>Click on the 'LeaderBoard' button to view the highscores and to see who is in the lead. </p>
+            </div>
+          </div>
+        
+    </div>
+    </div>
+    
+
+    
+        <!-- <input type="submit" value="Submit"> -->
+    
+    <script>
+        var input = document.querySelector("#name");
+        var form = document.querySelector("#nameform");
+        let newbtn  = document.querySelector("#new");
+        let loadbtn = document.querySelector("#resume");
+        let leaderboard = document.querySelector("#leaderboard");
+
+        newbtn.addEventListener('click',()=>{
+            window.location.href = "RPS.html?game=new&name="+input.value;
+        })
+
+        loadbtn.addEventListener('click',()=>{
+            window.location.href = "resume.html";
+        });
+
+        leaderboard.addEventListener('click',()=>{
+            window.location.href = "leaderboard.html";
+        });
+        // form.onsubmit = function(ev){
+        //     ev.preventDefault();
+        //     ev.stopPropagation();
+        //     console.log(this);
+            
+        //     return false;
+        // }
+    </script>
+</body>
+</html>
