@@ -17,8 +17,6 @@
 |#| Member Name |
 |-| -- |
 |1.| Kishon Diaz|
-|2.| Khalayla McIntosh |
-|3.| Adestin Grant |
 
 ## Instructions
 
